@@ -18,41 +18,47 @@ var invalidEmail = document.getElementById("invalidEmail");
 var createdAccount = document.getElementById("createdAccount");
 
 // register input 
-var fullName = document.getElementById("full_name");
-var number = document.getElementById("number");
-var address = document.getElementById("address");
-var age = document.getElementById("age");
-var email = document.getElementById("email");
-var male = document.getElementById("male");
-var female = document.getElementById("female");
+var fullName = document.getElementById("full_name").value;
+var number = document.getElementById("number").value;
+var address = document.getElementById("address").value;
+var age = document.getElementById("age").value;
+var email = document.getElementById("email").value;
+var male = document.getElementById("male").value;
+var female = document.getElementById("female").value;
 
 /* register */
 var createBtn = document.getElementById("createBtn");
 var registerForm = document.getElementById("createAcount");
 
 createBtn.addEventListener("click", function(){
-
   let data = new FormData(registerForm);
-  axios({
-      method: 'post',
-      url: 'http://localhost/Mozato/php/register.php',
-      data: data,
+  /*let _data = {
+    full_Name: fullName,
+    email:email,
+    password:inputRegister,
+    phone_number:number,
+    address : address,
+    age:age,
+    gender:male,
+  }*/
+
+  fetch('http://127.0.0.1:8000/api/add_user',{
+    Method:"POST",
+    body:JSON.stringify(data),
+    headers:{"Content-type":"application/json; charset=UTF-9"}
   })
-  .then(function (response) { 
-    if(response.data == "mess around"){
-      createdAccount.style.display = "block";
-    }
-    else{
-      console.log(response);
-      window.location = "file:///C:/xampp/htdocs/Mozato/index.html";
-    }
-  }
-  )
+  .then(response=>response.json())
+  .then(json=>console.log(json))
+  .catch(err=>console.log(err));
 });
+ 
+  
 loginBtn.addEventListener("click", function(){
-  let data = new FormData();
-  data.append('email', emailInput.value);
-  data.append('password', inputPassword.value);
+  // let data = new FormData();
+  // data.append('email', emailInput.value);
+  // data.append('password', inputPassword.value);
+  console.log(emailInput.value);
+  console.log(inputPassword.value);
   let _data = {
     email:emailInput.value,
     password :inputPassword.value
@@ -65,13 +71,11 @@ loginBtn.addEventListener("click", function(){
   .then(response=>response.json())
   .then(json=>console.log(json))
   .catch(err=>console.log(err));
-  /*.then((response) => {
-      return response.json();
-    })*/
+  
   
   /*axios({
       method: 'post',
-      url: 'http://localhost/Mozato/php/login.php',
+      url: 'http://127.0.0.1:8000/api/login',
       data: data,
   })
   .then(function (response) {
