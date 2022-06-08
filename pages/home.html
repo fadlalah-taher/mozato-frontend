@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/logo1.jpg">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../styles/home.css">
+    <title>Mozata</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="logo" src="../assets/logo1.jpg" alt="logo">
+            <div id="nav-box">
+                <a id="home-line" class="menu-item">Home</a>
+                <a class="menu-item">Check Restaurant</a>  
+                <a class="menu-item">Restaurant</a>
+                <a  class="menu-item" id="about">About Us</a>
+                <!--<a  class="menu-item" href="users.html" id="admin">Users</a>-->
+                <a class="menu-item" href="profile.html">Profile</a>
+                <a class="menu-item" href="users.html" id="admin">Users</a>
+                <a href=""><i id="profile-icon" class="fas fa-user icon"></i></a>
+                <a class="menu-item" href="../index.html">Logout</a>
+                <a class="menu-item" href="users.html" id="admin">Users</a>
+                
+                <div class="dropdown-wrapper">
+                    <span id="span-icon" style="font-size:30px;cursor:pointer">&#9776;</span>
+                    <div id="myNav" class="overlay">
+                        <img id="logo" src="../assets/logo1.jpg" alt="logo">
+                        <a href="javascript:void(0)" class="closebtn">&times;</a>
+                        <div class="overlay-content">
+                            <a id="home-line" class="menu-item">Home</a>
+                            <a class="menu-item">Check Restaurant</a>  
+                            <a class="menu-item">Restaurant</i></a>
+                            <a class="menu-item">About Us</a>
+                            <a class="menu-item" href="profile.html">Profile</a>
+                            <a class="menu-item" href="users.html" id="admin">Users</a>
+                            <a class="menu-item" href="../index.html">Logout</a>
+                            
+                        </div>
+                    </div>
+                    <button class="menu-button"><i class="fa-solid fa-bars"></i></button>    
+                </div>
+            </div>
+        </nav>
+        <div class="head">
+            <h1>Mozato</h1>
+            <h3>Discover the best Restaurants</h3>
+            <div>
+
+            </div>
+        </div>
+        <div class="header-image">
+        </div>
+    </header>
+
+    <!-- Top Restaurants  -->
+
+    <section class="top-restaurants">
+        <h1>Our Top Restaurants</h1>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            
+        </div>
+        <div id="restaurants-container" class="restaurants-container">
+            <div class="cards">
+                <div class="card">
+                <h2 class="card-title">Mexican</h2>
+                <img src="../assets/mexican.jpeg" alt="">
+                </div>
+                <div class="card">
+                <h2 class="card-title">Pizza</h2>
+                <img src="../assets/pizzeria1.jpg" alt="">
+                </div>
+                <div class="card">
+                <h2 class="card-title">Vegan</h2>
+                <img src="../assets/vegan.jpg" alt="">
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card">
+                <h2 class="card-title">Vegan</h2>
+                <img src="../assets/vegan3.jpg" alt="">
+                </div>
+                <div class="card">
+                <h2 class="card-title">Pezzeria</h2>
+                <img src="../assets/restaurant.jpg" alt="">
+                </div>
+                <div class="card">
+                <h2 class="card-title">Bakery</h2>
+                <img src="../assets/Bakery1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="app-section">
+        <div class="flex contact">
+            <img src="../assets/Allset_App.jpg" alt="">
+            <div class="address">
+                <h2>Get the Mozato app</h2>
+                <p>We will send you a link, open it on your phone to download the app</p>
+                <div class="flex radio">
+                    <div>
+                        <input type="radio" name="fill" id="emailApp" checked>
+                        <label for="emailApp">Email</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="fill" id="phoneApp">
+                        <label for="phoneApp">Phone</label>
+                    </div>
+                </div>
+                <div class="flex email">
+                    <input class="input" type="text">
+                    <label for="" class="place">Email</label>
+                    <button>Share App Link</button>
+                </div>
+                <p class="download"> Download App from</p>
+                <div class="flex app">
+                    <img src="https://b.zmtcdn.com/data/webuikit/9f0c85a5e33adb783fa0aef667075f9e1556003622.png" alt="">
+                    <img src="https://b.zmtcdn.com/data/webuikit/23e930757c3df49840c482a8638bf5c31556001144.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- footer  -->
+    <footer>
+        <div class="section">
+            <div class="first">
+                <div>
+                    <h1>Mozato</h1>
+                </div>
+            </div>
+            <div class="second">
+                <div class="second-1">
+                    <h4>Company</h4>
+                    <a href="#">Who we are</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Career</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Investors Relations</a>
+                </div>
+                <div class="second-1">
+                    <h4>For Foodies</h4>
+                    <a href="#">Code of Conducts</a>
+                    <a href="#">Community</a>
+                    <a href="#">Blogger Help</a>
+                    <a href="#">Mobile Apps</a>
+                </div>
+                <div class="second-1">
+                    <h4>For Restaurants</h4>
+                    <a href="#">Add Restaurants</a>
+                    <h4>For Enterprises</h4>
+                    <a href="#">Mozato For Work</a>
+                </div>
+                <div class="second-1">
+                    <h4>For You</h4>
+                    <a href="#">Privacy</a>
+                    <a href="#">Security</a>
+                    <a href="#">Sitemap</a>
+                </div>
+                <div class="box">
+                    <h4>Social Links</h4>
+                    <div class="li">
+                        <li class="fab fa-facebook"></li>
+                        <li class="fab fa-twitter"></li>
+                        <li class="fab fa-instagram"></li>
+                    </div>
+                    <img src="https://b.zmtcdn.com/data/webuikit/9f0c85a5e33adb783fa0aef667075f9e1556003622.png" alt="">
+                    <img src="https://b.zmtcdn.com/data/webuikit/23e930757c3df49840c482a8638bf5c31556001144.png" alt="">
+                </div>
+            </div>
+            <hr>
+            <p class="third">&copy; By Developer Dude, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2022 © Mozato™ Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+ 
+
+    <script src="../javascript/home.js"></script>
+</body>
+</html>

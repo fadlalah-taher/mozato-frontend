@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="icon" href="assets/logo1.jpg">
+    <link rel="stylesheet" href="styles/login.css">
+    <title>Mozato</title>
+</head>
+<body>
+    <header>
+        <section>
+            <div class="header-container">
+                <div class="left-container">
+                    <h1>Mozato</h1>
+                    <p>Discover the best restaurants</p>
+                </div>
+                <div class="right-container">
+                    <form action="">
+                        <div class="input-icons">
+                            <h1 id="header">Log in</h1>
+                            <div class="input-login">
+                                <i class="far fa-envelope icon"></i>
+                                <input id="emailInput" type="text" class="input-field" placeholder="Email address " required>
+                            </div>
+                            <div class="input-login">
+                                <i class="fas fa-key icon"></i>
+                                <input type="password" id="inputPassword" class="input-field" placeholder="Password" required>
+                                <span class="inputContainer" id="password-icon">
+                                    <i id="hide1" class="far fa-eye icon"></i>
+                                    <i id="hide2" class="far fa-eye-slash icon"></i>
+                                </span>
+                            </div>
+                       </div>
+                       <a href="" id="invalidEmail" class="forget">Invalid email or password!</a>
+                        <a href="#" id="loginBtn" class="loginBtn">Log In</a>
+                        <a href="" class="forget">Forgotten password?</a>
+                        <div class="signup">
+                            <a href="#" id="signBtn" class="signBtn">Register</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section  class="popup">
+            <div id="register-section" class="header-container">
+                <div class="right-container">
+                    <form id="createAcount" action="">
+                        <h1 id="header">Sign up</h1>
+                        <div class="input-icons">
+                            <div class="input-login">
+                                <i class='fas fa-arrow-circle-right icon'></i>
+                                <input name="full_name" id="full_name" type="text" class="input-field" placeholder="Full Name" required>
+                            </div>
+                            <div class="input-login">
+                                <i class="far fa-envelope icon"></i>
+                                <input name="email" id="email" type="text" class="input-field" placeholder="Email address " required>
+                            </div>
+                            <div class="input-login">
+                                <i class="fas fa-key icon"></i>
+                                <input type="password" name="password" id="inputPassword-register" class="input-field" placeholder="Password" required>
+                                <span class="inputContainer" id="passwordRegister-icon">
+                                <i id="hide3" class="far fa-eye icon"></i>
+                                <i id="hide4" class="far fa-eye-slash icon"></i>
+                                </span>
+                            </div>
+                            <div class="input-login">
+                                <i class="fa-solid fa-phone icon"></i>
+                                <input type="text" id="number"  placeholder="Phone Number" class="input-field"  name="phone_number" required>
+                            </div>
+                            <div class="input-login">
+                                <i class="fas fa-address-card icon"></i>
+                                <input type="text" id="address"  placeholder="Address" class="input-field"  name="address" required>
+                            </div>
+                            <div class="input-login">
+                                <i class="fa fa-child icon" aria-hidden="true"></i>
+                                <input type="number" id="age" name="age" class="input-field" placeholder="Age" min="18" max="80" required>
+                            </div>
+                            <div class="radio-group">
+                                <label class="radio" for="male">
+                                    <input type="radio"  name="male" id="male" value="0">
+                                    Male
+                                    <span></span>
+                                </label>
+
+                                <label class="radio" for="female">
+                                    <input type="radio" name="female" id="female" value="1">
+                                    Female
+                                    <span></span>
+                                </label>
+                            </div>
+                       </div>
+                       <a href="#" id="createdAccount" class="forget">Please fill the fields above!<br></a>
+                        <a href="#" id="createBtn" class="loginBtn create">Create Acount</a>
+                        <div class="align-a">
+                            <a href="index.html" class="alreadyAccount">Already have an account? <a href="index.html" class="forget">Log in</a></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </header>
+    <script src="javascript/login.js"></script>
+</body>
+</html>

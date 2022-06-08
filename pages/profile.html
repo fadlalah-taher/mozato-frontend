@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="icon" href="../assets/logo1.jpg">
+    <link rel="stylesheet" href="../styles/home.css">
+    <title>Profile Edit</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="logo" src="../assets/logo1.jpg" alt="logo">
+            <div>
+                <a class="menu-item" href="home.html">Home</a>
+                <a class="menu-item">Check Restaurant</a>  
+                <a class="menu-item">Restaurant</i></a>
+                <a class="menu-item">About Us</a>
+                <a id="home-line" class="menu-item">Profile</a>
+                <a href=""><i id="profile-icon" class="fas fa-user icon"></i></a>
+                <a class="menu-item" href="../index.html">Logout</a>
+                <div class="dropdown-wrapper">
+                    <span id="span-icon" style="font-size:30px;cursor:pointer">&#9776;</span>
+                    <div id="myNav" class="overlay">
+                        <img id="logo" src="../assets/logo1.jpg" alt="logo">
+                        <a href="javascript:void(0)" class="closebtn">&times;</a>
+                        <div class="overlay-content">
+                            <a id="home-line" class="menu-item" href="home.html">Home</a>
+                            <a class="menu-item">Check Restaurant</a>  
+                            <a class="menu-item">Restaurant</i></a>
+                            <a class="menu-item">About Us</a>
+                            <a class="menu-item">Profile</a>
+                            <a class="menu-item" href="../index.html">Logout</a>
+                        </div>
+                    </div>
+                    <button class="menu-button"><i class="fa-solid fa-bars"></i></button>    
+                </div>
+            </div>
+        </nav>
+        <section class="popup">
+            <div class="header-container">
+                <div class="left-container">
+                    <h1></h1>
+                    <p></p>
+                </div>
+                <div id="profile-container" class="right-container">
+                    <form id="editProfile" action="">
+                        <img src="../assets/avatar.jpg" alt="">
+                        <h1 id="header-profile">Edit Profile</h1>
+                        <div class="input-icons">
+                            <div class="input-login">
+                                <i class='fas fa-arrow-circle-right icon'></i>
+                                <input type="text" id="name" name="full_name" class="input-field" placeholder="Full Name">
+                            </div>
+                            <div class="input-login">
+                                <i class="far fa-envelope icon"></i>
+                                <input type="text" id="email" name="email" class="input-field" placeholder="Email address ">
+                            </div>
+                            <div class="input-login">
+                                <i class="fas fa-key icon"></i>
+                                <input type="password" name="password" id="inputPassword" class="input-field" placeholder="Password">
+                                <span class="inputContainer" id="profilePassword-icon">
+                                <i id="hide1" class="far fa-eye icon eye"></i>
+                                <i id="hide2" class="far fa-eye-slash icon eye"></i>
+                                </span>
+                            </div>
+                            <div class="input-login">
+                                <i class="fa-solid fa-phone icon"></i>
+                                <input type="text" id="phonenumber" placeholder="Phone Number" class="input-field"  name="phone_number" required>
+                            </div>
+                            <div class="input-login">
+                                <i class="fas fa-address-card icon"></i>
+                                <input type="text" id="address" placeholder="Address" class="input-field"  name="address" required>
+                            </div>
+                            <div class="input-login">
+                                <i class="fa fa-child icon" aria-hidden="true"></i>
+                                <input type="number" id="age" name="age" class="input-field" placeholder="Age" min="18" max="80" required>
+                            </div>
+                       </div>
+                        <a href="#" id="doneBtn" class="doneBtn create">Done</a>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </header>
+<script src="../javascript/profile.js"></script>
+</body>
+</html>
