@@ -43,7 +43,7 @@ createBtn.addEventListener("click", function(){
   }*/
 
   fetch('http://127.0.0.1:8000/api/add_user',{
-    Method:"POST",
+    method:"POST",
     body:JSON.stringify(data),
     headers:{"Content-type":"application/json; charset=UTF-9"}
   })
@@ -54,9 +54,9 @@ createBtn.addEventListener("click", function(){
  
   
 loginBtn.addEventListener("click", function(){
-  // let data = new FormData();
-  // data.append('email', emailInput.value);
-  // data.append('password', inputPassword.value);
+  /* let data = new FormData();
+   data.append('email', emailInput.value);
+   data.append('password', inputPassword.value);*/
   console.log(emailInput.value);
   console.log(inputPassword.value);
   let _data = {
@@ -64,7 +64,7 @@ loginBtn.addEventListener("click", function(){
     password :inputPassword.value
   }
   fetch('http://127.0.0.1:8000/api/login',{
-    Method:"POST",
+    method:"POST",
     body:JSON.stringify(_data),
     headers:{"Content-type":"application/json; charset=UTF-9"}
   })
