@@ -42,18 +42,11 @@ profilePassword.addEventListener("click", function(){
 
 doneBtn.addEventListener("click", function(){
   let data = new FormData(editForm);
-  // another way bellow 
-  //let data = new FormData();
-  /*data.append('full_name', fullName.value);
-  data.append('age', age.value);
-  data.append('address', address.value);
-  data.append('phone_number', phoneNumber.value);
-  data.append('password', inputPasswordprofile.value);
-  data.append('email', email.value);*/
+ 
   data.append('user_id', window.localStorage.getItem("user_id"));
   axios({
       method: 'post',
-      url: 'http://localhost/Mozato/php/profile.php',
+      url: 'http://127.0.0.1:8000/api/update_pro/',
       data: data,
   })
   .then(function (response) {
