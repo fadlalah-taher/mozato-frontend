@@ -29,10 +29,10 @@ var female = document.getElementById("female").value;
 /* register */
 var createBtn = document.getElementById("createBtn");
 var registerForm = document.getElementById("createAcount");
-
+let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 createBtn.addEventListener("click", function(){
   let data = new FormData(registerForm);
-  /*let _data = {
+  let _data = {
     full_Name: fullName,
     email:email,
     password:inputRegister,
@@ -40,55 +40,39 @@ createBtn.addEventListener("click", function(){
     address : address,
     age:age,
     gender:male,
-  }*/
+    user_role:0
+  }
 
   fetch('http://127.0.0.1:8000/api/add_user',{
     method:"POST",
-    body:JSON.stringify(data),
-    headers:{"Content-type":"application/json; charset=UTF-9"}
+    body:JSON.stringify(_data),
+    headers:{"Content-type":"application/json; charset=UTF-9","Accept": "application/json, text-plain, /",
+    "X-Requested-With": "XMLHttpRequest",
+    "X-CSRF-TOKEN": token}
   })
   .then(response=>response.json())
   .then(json=>console.log(json))
   .catch(err=>console.log(err));
 });
- 
-  
+
 loginBtn.addEventListener("click", function(){
-  /* let data = new FormData();
-   data.append('email', emailInput.value);
-   data.append('password', inputPassword.value);*/
-  console.log(emailInput.value);
-  console.log(inputPassword.value);
+
   let _data = {
     email:emailInput.value,
     password :inputPassword.value
   }
+
   fetch('http://127.0.0.1:8000/api/login',{
     method:"POST",
     body:JSON.stringify(_data),
     headers:{"Content-type":"application/json; charset=UTF-9"}
   })
   .then(response=>response.json())
-  .then(json=>console.log(json))
+  .then(window.location= "file:///C:/Users/Fadel/Desktop/Mozato_frontend/pages/home.html")
+  // .then(json=>console.log(json))
   .catch(err=>console.log(err));
+
   
-  
-  /*axios({
-      method: 'post',
-      url: 'http://127.0.0.1:8000/api/login',
-      data: data,
-  })
-  .then(function (response) {
-    if(emailInput.value == "" ||  inputPassword.value == "" || response.data["response"] == "User Not Found"){
-      invalidEmail.style.display = "block";   
-      //window.location = "file:///C:/xampp/htdocs/Mozato/index.html";
-    }
-    else{
-    window.localStorage.setItem("user_id", response.data.user_id);
-    window.location = "file:///C:/xampp/htdocs/Mozato/pages/home.html";
-    }
-    }
-  ) */
 });
 
 // Adding Register Form

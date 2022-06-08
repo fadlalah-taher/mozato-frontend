@@ -2,7 +2,8 @@ var myNav = document.getElementById("myNav");
 var icon = document.getElementById("span-icon");
 var usersContainer = document.getElementById("users-container")
 
-window.onload = (function(){
+
+/*window.onload = (function(){
     axios({
         method: 'post',
         url: 'http://localhost/Mozato/php/users.php',
@@ -49,8 +50,8 @@ window.onload = (function(){
         }
     )
 })
+*/
 
-console.log("helo");
 icon.addEventListener("click", function(){
     myNav.style.width = "100%";
 });
