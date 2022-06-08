@@ -53,7 +53,23 @@ loginBtn.addEventListener("click", function(){
   let data = new FormData();
   data.append('email', emailInput.value);
   data.append('password', inputPassword.value);
-  axios({
+  let _data = {
+    email:emailInput.value,
+    password :inputPassword.value
+  }
+  fetch('http://127.0.0.1:8000/api/login',{
+    Method:"POST",
+    body:JSON.stringify(_data),
+    headers:{"Content-type":"application/json; charset=UTF-9"}
+  })
+  .then(response=>response.json())
+  .then(json=>console.log(json))
+  .catch(err=>console.log(err));
+  /*.then((response) => {
+      return response.json();
+    })*/
+  
+  /*axios({
       method: 'post',
       url: 'http://localhost/Mozato/php/login.php',
       data: data,
@@ -68,7 +84,7 @@ loginBtn.addEventListener("click", function(){
     window.location = "file:///C:/xampp/htdocs/Mozato/pages/home.html";
     }
     }
-  ) 
+  ) */
 });
 
 // Adding Register Form
