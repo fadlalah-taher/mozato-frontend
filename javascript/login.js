@@ -36,12 +36,12 @@ createBtn.addEventListener("click", function(){
   //let data = new FormData(registerForm);
   let data = {
     full_Name: fullName.value,
-    email:email.value,
-    password:inputRegister.value,
-    phone_number:phonenumber.value,
-    address : address.value,
-    age:age.value,
-    gender:male.value,
+    email: email.value,
+    password: inputRegister.value,
+    phone_number: phonenumber.value,
+    address: address.value,
+    age: age.value,
+    gender: male.value
   }
 
   fetch('http://127.0.0.1:8000/api/add_user',{

@@ -5,13 +5,13 @@ var usersContainer = document.getElementById("users-container")
 
 window.onload = (function(){
     axios({
-        method: 'POST',
+        method: 'GET',
         url: 'http://127.0.0.1:8000/api/all_users',
     })
     .then(function (response) {
         let users = response.data;
         usersContainer.innerHTML = ""; 
-        users.forEach(user => {
+        Object.keys(users).forEach(user => {
             let userHtml = `
             <div class="container">
                 <div class="right">
