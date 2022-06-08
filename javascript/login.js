@@ -29,7 +29,9 @@ var female = document.getElementById("female").value;
 /* register */
 var createBtn = document.getElementById("createBtn");
 var registerForm = document.getElementById("createAcount");
+
 let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
 createBtn.addEventListener("click", function(){
   let data = new FormData(registerForm);
   let _data = {
@@ -45,15 +47,15 @@ createBtn.addEventListener("click", function(){
 
   fetch('http://127.0.0.1:8000/api/add_user',{
     method:"POST",
-    body:JSON.stringify(_data),
-    headers:{"Content-type":"application/json; charset=UTF-9","Accept": "application/json, text-plain, /",
-    "X-Requested-With": "XMLHttpRequest",
+    body:JSON.stringify(  data),
+    headers:{"Content-type":"application/json; charset=UTF-9",
     "X-CSRF-TOKEN": token}
   })
   .then(response=>response.json())
   .then(json=>console.log(json))
   .catch(err=>console.log(err));
 });
+
 
 loginBtn.addEventListener("click", function(){
 

@@ -3,10 +3,10 @@ var icon = document.getElementById("span-icon");
 var usersContainer = document.getElementById("users-container")
 
 
-/*window.onload = (function(){
+window.onload = (function(){
     axios({
-        method: 'post',
-        url: 'http://localhost/Mozato/php/users.php',
+        method: 'POST',
+        url: 'http://127.0.0.1:8000/api/all_users',
     })
     .then(function (response) {
         let users = response.data;
@@ -50,7 +50,7 @@ var usersContainer = document.getElementById("users-container")
         }
     )
 })
-*/
+
 
 icon.addEventListener("click", function(){
     myNav.style.width = "100%";
