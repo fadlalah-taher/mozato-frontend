@@ -18,13 +18,13 @@ var invalidEmail = document.getElementById("invalidEmail");
 var createdAccount = document.getElementById("createdAccount");
 
 // register input 
-var fullName = document.getElementById("full_name").value;
-var number = document.getElementById("number").value;
-var address = document.getElementById("address").value;
-var age = document.getElementById("age").value;
-var email = document.getElementById("email").value;
-var male = document.getElementById("male").value;
-var female = document.getElementById("female").value;
+var fullName = document.getElementById("full_name");
+var phonenumber = document.getElementById("number");
+var address = document.getElementById("address");
+var age = document.getElementById("age");
+var email = document.getElementById("email");
+var male = document.getElementById("male");
+var female = document.getElementById("female");
 
 /* register */
 var createBtn = document.getElementById("createBtn");
@@ -33,23 +33,21 @@ var registerForm = document.getElementById("createAcount");
 let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
 createBtn.addEventListener("click", function(){
-  let data = new FormData(registerForm);
-  let _data = {
-    full_Name: fullName,
-    email:email,
-    password:inputRegister,
-    phone_number:number,
-    address : address,
-    age:age,
-    gender:male,
-    user_role:0
+  //let data = new FormData(registerForm);
+  let data = {
+    full_Name: fullName.value,
+    email:email.value,
+    password:inputRegister.value,
+    phone_number:phonenumber.value,
+    address : address.value,
+    age:age.value,
+    gender:male.value,
   }
 
   fetch('http://127.0.0.1:8000/api/add_user',{
     method:"POST",
-    body:JSON.stringify(  data),
-    headers:{"Content-type":"application/json; charset=UTF-9",
-    "X-CSRF-TOKEN": token}
+    body:JSON.stringify(data),
+    headers:{"Content-type":"application/json; charset=UTF-9"}
   })
   .then(response=>response.json())
   .then(json=>console.log(json))
@@ -63,7 +61,6 @@ loginBtn.addEventListener("click", function(){
     email:emailInput.value,
     password :inputPassword.value
   }
-
   fetch('http://127.0.0.1:8000/api/login',{
     method:"POST",
     body:JSON.stringify(_data),
@@ -81,7 +78,6 @@ loginBtn.addEventListener("click", function(){
 
 signBtn.addEventListener("click", function(){
     popup.style.display = "flex";
-    console.log("Hello flex");
 });
 
 window.onclick = function(event) {
